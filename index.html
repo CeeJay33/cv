@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Water Drop Download</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .water-button {
+            position: relative;
+            background: #00a8ff;
+            color: white;
+            border: none;
+            width: 200px;
+            height: 60px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 168, 255, 0.4);
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .water-button::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform-origin: 0 0;
+            animation: rotate 3s linear infinite;
+            z-index: 1;
+            border-radius: 40%;
+            pointer-events: none;
+        }
+
+        .water-button::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform-origin: 0 0;
+            animation: rotate 4s linear infinite;
+            z-index: 1;
+            border-radius: 42%;
+            pointer-events: none;
+        }
+
+        .button-text {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        span{
+            padding: 3px 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="./Victor_Nwagbo Resume.pdf" download class="water-button">
+            <span class="button-text">Download CV</span>
+        </a>
+    </div>
+</body>
+</html>
